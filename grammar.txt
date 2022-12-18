@@ -1,0 +1,11 @@
+Program
+var begin end ; identifier ( ) read write
+Program Variables Variable Operators Operator
+Program -> Variables Operators end
+Variables -> Variable ; Variables
+Variables -> epsilon
+Variable -> identifier
+Operators -> Operator ; Operators
+Operators -> epsilon
+Operator -> read ( Variable )
+Operator -> write ( Variable )
