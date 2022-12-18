@@ -1,7 +1,6 @@
 Program
 var begin end ; identifier ( ) read write hello
 Program Variables Variable Operators Operator
-Program -> Program hello
 Program -> var Variables Operators end
 Variables -> Variable ; Variables
 Variables -> epsilon

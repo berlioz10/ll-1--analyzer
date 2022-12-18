@@ -97,3 +97,21 @@ class FirstFollowTable:
                     if EPSILON not in self.first[el[0]]:
                         self.first[el[0]].add(EPSILON)
                         ok = True
+
+    def get_all_first(self, alpha):
+        arr = set()
+        for symbol in alpha:
+            
+            if EPSILON in arr:
+                arr.remove(EPSILON)
+
+            if symbol == EPSILON:
+                arr.add(symbol)
+            else:
+                for el in self.first[symbol]:
+                    arr.add(el)
+                if EPSILON not in self.first[symbol]:
+                    break
+
+
+        return arr
