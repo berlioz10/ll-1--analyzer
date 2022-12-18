@@ -1,17 +1,16 @@
-,var,identifier,read,write,$,end,begin,;,(,),hello
-Program,"(['var', 'Variables', 'Operators', 'end'], 0)",err,err,err,err,err,err,err,err,err,err
-var,pop,err,err,err,err,err,err,err,err,err,err
-Variables,err,"(['Variable', ';', 'Variables'], 1)","(['epsilon'], 2)","(['epsilon'], 2)","(['epsilon'], 2)",err,err,err,err,err,err
-Variable,err,"(['identifier'], 3)",err,err,err,err,err,err,err,err,err
-identifier,err,pop,err,err,err,err,err,err,err,err,err
-Operators,err,err,"(['Operator', ';', 'Operators'], 4)","(['Operator', ';', 'Operators'], 4)",err,"(['epsilon'], 5)",err,err,err,err,err
-Operator,err,err,"(['read', '(', 'Variable', ')'], 6)","(['write', '(', 'Variable', ')'], 7)",err,err,err,err,err,err,err
-read,err,err,pop,err,err,err,err,err,err,err,err
-write,err,err,err,pop,err,err,err,err,err,err,err
-$,err,err,err,err,acc,err,err,err,err,err,err
-end,err,err,err,err,err,pop,err,err,err,err,err
-begin,err,err,err,err,err,err,pop,err,err,err,err
-;,err,err,err,err,err,err,err,pop,err,err,err
-(,err,err,err,err,err,err,err,err,pop,err,err
-),err,err,err,err,err,err,err,err,err,pop,err
-hello,err,err,err,err,err,err,err,err,err,err,pop
+,var,begin,identifier,end,read,write,;,(,),$
+Program,"(['var', 'Variables', 'begin', 'Operators', 'end'], 0)",err,err,err,err,err,err,err,err,err
+var,pop,err,err,err,err,err,err,err,err,err
+Variables,err,"(['epsilon'], 2)","(['Variable', ';', 'Variables'], 1)",err,err,err,err,err,err,err
+begin,err,pop,err,err,err,err,err,err,err,err
+Variable,err,err,"(['identifier'], 3)",err,err,err,err,err,err,err
+identifier,err,err,pop,err,err,err,err,err,err,err
+Operators,err,err,err,"(['epsilon'], 5)","(['Operator', ';', 'Operators'], 4)","(['Operator', ';', 'Operators'], 4)",err,err,err,err
+end,err,err,err,pop,err,err,err,err,err,err
+Operator,err,err,err,err,"(['read', '(', 'Variable', ')'], 6)","(['write', '(', 'Variable', ')'], 7)",err,err,err,err
+read,err,err,err,err,pop,err,err,err,err,err
+write,err,err,err,err,err,pop,err,err,err,err
+;,err,err,err,err,err,err,pop,err,err,err
+(,err,err,err,err,err,err,err,pop,err,err
+),err,err,err,err,err,err,err,err,pop,err
+$,err,err,err,err,err,err,err,err,err,acc
