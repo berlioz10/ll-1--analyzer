@@ -15,3 +15,9 @@ class Grammar:
             dr = line[2:]
             self.production_rules.append((st, dr))
 
+    def rule_to_string(self, rule):
+        string = rule[0] + ' -> '
+        for symbol in rule[1]:
+            string += symbol + ' '
+        return string
+
