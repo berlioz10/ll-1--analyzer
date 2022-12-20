@@ -7,6 +7,7 @@ class LL1:
     def __init__(self, fft: FirstFollowTable):
         self.fft = fft
         self.grammar = self.fft.grammar
+        self.table = {}
 
     def verify(self):
         for index, prod1 in enumerate(self.grammar.production_rules):
@@ -33,7 +34,7 @@ class LL1:
         return True
 
     def create_table(self):
-        table = {}
+        self.table = {}
 
         for symbol in self.grammar.nonterminals:
             for terminal in self.grammar.terminals + ["$"]:
@@ -41,30 +42,55 @@ class LL1:
                     if prod[0] == symbol:
                         firstalpha = self.fft.get_all_first(prod[1])
                         if terminal in firstalpha:
-                            table[prod[0], terminal] = (prod[1], index)
+                            self.table[prod[0], terminal] = (prod[1], index)
                         else:
                             if EPSILON in firstalpha and terminal in self.fft.follow[symbol]:
-                                table[prod[0], terminal] = (prod[1], index)
+                                self.table[prod[0], terminal] = (prod[1], index)
 
         for symbol in self.grammar.terminals:
-            table[symbol, symbol] = "pop"
+            self.table[symbol, symbol] = "pop"
 
-        table["$", "$"] = "acc"
-        
+        self.table["$", "$"] = "acc"
         # a beautiful print :D
         new_table = {}
-        for pair in table:
+        for pair in self.table:
             new_table[pair[1]] = {}
 
-        for pair in table:
-            new_table[pair[1]][pair[0]] = table[pair]
+        for pair in self.table:
+            new_table[pair[1]][pair[0]] = self.table[pair]
         
 
 
         pd.DataFrame(new_table).fillna('err').to_csv("table_ll1.csv")
-        return table
+        return self.table
 
     def parse_string(self, string):
-        # to do
-        None
+        stack = [self.grammar.start, '$']
+        output_band = []
+        string += ['$']
+        ok = True
+        while True:
+            print(str(stack) + "\n" + str(string))
+
+            symbol = stack.pop(0)
+            terminal = string[0]
+            
+            print(self.table[symbol, terminal])
+            print()
+            print()
+            if (symbol, terminal) not in self.table:
+                return False, output_band
+            state = self.table[symbol, terminal]
+            if state == "pop":
+                string.pop(0)
+            elif state == "acc":
+                return True, output_band
+            else:
+                if EPSILON not in state[0]:    
+                    stack = state[0] + stack
+                output_band.append(state[1])
+            
+        
+
+
 
