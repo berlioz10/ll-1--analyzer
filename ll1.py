@@ -75,11 +75,12 @@ class LL1:
             symbol = stack.pop(0)
             terminal = string[0]
             
+            if (symbol, terminal) not in self.table:
+                return False, output_band
+            
             print(self.table[symbol, terminal])
             print()
             print()
-            if (symbol, terminal) not in self.table:
-                return False, output_band
             state = self.table[symbol, terminal]
             if state == "pop":
                 string.pop(0)
