@@ -18,7 +18,7 @@ class LL1:
                         first2 = self.fft.get_all_first(prod2[1])
 
                         if not first1.isdisjoint(first2):
-                            # print(str(prod1) + " " + str(prod2) + " " + str(first1) + " " + str(first2))
+                            print(str(prod1) + " " + str(prod2) + " " + str(first1) + " " + str(first2))
                             return False
 
                         if EPSILON in first1:

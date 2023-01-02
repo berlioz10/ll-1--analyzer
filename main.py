@@ -20,7 +20,8 @@ def run():
         inp = input('''
         1. Put a new file grammar
         2. Put a string to parse
-        3. Exit
+        3. Put your funny fip file ( do not forget to load the language grammar file)
+        4 or any letter. Exit
         >> ''')
         if inp == "1":
             grammar_file = input('''
@@ -62,6 +63,29 @@ def run():
                 else:
                     print('''
             Oh no! Looks like you can do better and pick a correct string.''')
+        elif inp == "3":
+
+
+            inp = input("Load your FIP file:")
+            fip_array = []
+            fip_file = open(inp)
+            for line in fip_file.readlines():
+                line = line.split()
+                if line[1].isnumeric():
+                    fip_array += list(line[-1])
+                else:
+                    fip_array.append(line[-1])
+            
+            ok, output_band = ll1.parse_string(fip_array)
+
+            if ok:
+                print('''
+        Yoo-hoo! The fip is correct with C++ grammar💪.''')
+                print_production_rules(output_band, g)
+                # print(output_band)
+            else:
+                print('''
+        Oh no! Looks like you can do better and pick a correct string.''')
         else: 
             return
 

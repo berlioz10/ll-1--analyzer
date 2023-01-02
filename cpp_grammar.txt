@@ -1,0 +1,86 @@
+<program>
+#include iostream int main ( ) { } return 0 1 2 3 4 5 6 7 8 9 a b c d e f g h i j k l m n o p q r s t u v w x y z ; , + - * / % = float string while if cin cout << >> < > != == "\n"
+CONST ID <continuare_CONST> <continuare_ID> <lista_variabile_continuare> <program> <variabila> <continuare_expresie> <import> <main> <lista_instructiuni> <cifra> <caracter> <operator_logic> <conditie> <instr_iesire> <continuare_instr_iesire> <instr_citire> <instructiune_selectie> <instructiune> <instructiune_ciclare> <instructiune_compusa> <operator> <expresie> <atribuire> <lista_variabile> <tip_variabila> <declaratie_variabila>
+<program> -> <import> <main>
+<import> -> #include < iostream >
+<main> -> int main ( ) { <lista_instructiuni> return 0 ; }
+<lista_instructiuni> -> <instructiune> <lista_instructiuni>
+<lista_instructiuni> -> epsilon
+<instructiune> -> <atribuire>
+<instructiune> -> <instr_citire>
+<instructiune> -> <instr_iesire>
+<instructiune> -> <instructiune_ciclare>
+<instructiune> -> <instructiune_selectie>
+<instructiune> -> <declaratie_variabila>
+<declaratie_variabila> -> <tip_variabila> <lista_variabile> ;
+<tip_variabila> -> int
+<tip_variabila> -> float
+<tip_variabila> -> string
+<lista_variabile> -> ID <lista_variabile_continuare>
+<lista_variabile_continuare> -> , ID <lista_variabile_continuare>
+<lista_variabile_continuare> -> epsilon
+<atribuire> -> ID = <expresie> ;
+<expresie> -> <variabila> <continuare_expresie>
+<continuare_expresie> -> <operator> <variabila>
+<continuare_expresie> -> epsilon
+<variabila> -> ID
+<variabila> -> CONST
+<operator> -> +
+<operator> -> -
+<operator> -> *
+<operator> -> /
+<operator> -> %
+<instructiune_compusa> -> { <lista_instructiuni> }
+<instructiune_ciclare> -> while ( <conditie> ) <instructiune_compusa>
+<instructiune_selectie> -> if ( <conditie> ) <instructiune_compusa>
+<instr_citire> -> cin > > ID ;
+<instr_iesire> -> cout < < <continuare_instr_iesire> ;
+<continuare_instr_iesire> -> <expresie>
+<continuare_instr_iesire> -> "\n"
+<conditie> -> <expresie> <operator_logic> <expresie>
+<operator_logic> -> == 
+<operator_logic> -> > 
+<operator_logic> -> < 
+<operator_logic> -> !=
+ID -> <caracter> <continuare_ID>
+<continuare_ID> -> <caracter> <continuare_ID>
+<continuare_ID> -> epsilon
+<caracter> -> a 
+<caracter> -> b
+<caracter> -> c
+<caracter> -> d
+<caracter> -> e
+<caracter> -> f
+<caracter> -> g
+<caracter> -> h
+<caracter> -> i
+<caracter> -> j
+<caracter> -> k
+<caracter> -> l
+<caracter> -> m
+<caracter> -> n
+<caracter> -> o
+<caracter> -> p
+<caracter> -> q
+<caracter> -> r
+<caracter> -> s
+<caracter> -> t
+<caracter> -> u
+<caracter> -> v
+<caracter> -> w
+<caracter> -> x
+<caracter> -> y
+<caracter> -> z
+CONST -> <cifra> <continuare_CONST>
+<continuare_CONST> -> <cifra> <continuare_CONST>
+<continuare_CONST> -> epsilon
+<cifra> -> 0
+<cifra> -> 1
+<cifra> -> 2
+<cifra> -> 3
+<cifra> -> 4
+<cifra> -> 5
+<cifra> -> 6
+<cifra> -> 7
+<cifra> -> 8
+<cifra> -> 9
